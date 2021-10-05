@@ -1,0 +1,15 @@
+<div class="card-panel">
+    <ul class="collection with-header">
+        <li class="collection-header teal-text">
+            <h4> <span *ngIf="layers.length === 0">No</span> <span>{{layers.length === 0 ? ' drawn l' : 'Drawn L'}}</span>ayers
+                <span *ngIf="layers.length === 0">available</span></h4>
+        </li>
+        <li *ngFor="let layer of layers;" class="collection-item teal-text"
+            [ngClass]="{'red lighten-4': layer.selected}">
+            <div>
+                {{layer.name}}
+                <span *ngIf="layer.selected" class="secondary-content">Selects a benzene vertex</span>
+            </div>
+        </li>
+    </ul>
+</div>
